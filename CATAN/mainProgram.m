@@ -33,33 +33,13 @@ tile(8).robber = 1;     % add robber
 for rolli = 2:12
     [player, deck] = assignResources(player, rolli, deck, roll, tile);
 end
-
-player(1).stash.road = 13;
-player(2).stash.road = 13;
-player(3).stash.road = 13;
-player(4).stash.road = 13;
-player(1).stash.settlement = 3;
-player(2).stash.settlement = 3;
-player(3).stash.settlement = 3;
-player(4).stash.settlement = 3;
-
-
-
-player(1).usedPort = 0;
-player(2).usedPort = 0;
-player(3).usedPort = 0;
-player(4).usedPort = 0;
-
-player(1).usedTrade = 0;
-player(2).usedTrade = 0;
-player(3).usedTrade = 0;
-player(4).usedTrade = 0;
-
-player(1).buyAbility = true;
-player(2).buyAbility = true;
-player(3).buyAbility = true;
-player(4).buyAbility = true;
-
+for i = 1:4
+    player(i).stash.road = 13;
+    player(i).stash.settlement = 3;
+    player(i).usedPort = 0;
+    player(i).usedTrade = 0;
+    player(i).buyAbility = true;
+end
 
 
 turns = 0;
@@ -114,7 +94,7 @@ while VP == false
 end
 
 % after each loop, display the stats in an array
-hello = 1;
+
 %% display game stats
 
 % displays all four player's number of settlements, cities, and total VP
